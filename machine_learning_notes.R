@@ -47,6 +47,7 @@ iris_valid <- filter(iris, label == "validation")
 
 iris_lm <-lm(Petal.Length ~ Petal.Width + Sepal.Width, data = iris_train)
 iris_lm
+summary(iris_lm)
 
 ## select out only the x values we use (Petal. Width and Sepal.Length)
 iris_lm_predictions <- select(iris_test, Petal.Width, Sepal.Length)
@@ -55,3 +56,9 @@ iris_lm_predictions <- select(iris_test, Petal.Width, Sepal.Length)
 iris_train$lm_pred <- iris_lm_predictions
 
 head(iris_train)
+
+##logistic model
+
+mean(iris$Petal.Length)
+iris_train_glm <- iris_train %>%
+  mutate
